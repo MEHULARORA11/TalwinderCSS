@@ -212,7 +212,7 @@ export function Playground() {
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-[#22222a] pb-6 mb-8 gap-4">
         <div>
           <h1 className="text-3xl font-extrabold text-white flex items-center gap-2">
-            <Sliders className="h-7 w-7 text-purple-400" />
+            <Sliders className="h-7 w-7 text-[#9a9aa8]" />
             Interactive Playground
           </h1>
           <p className="text-sm text-[#a0a0ba] mt-1">
@@ -247,7 +247,7 @@ export function Playground() {
               <span className="text-xs font-semibold text-[#a0a0ba] uppercase tracking-wider">Configure Boxes</span>
               <button
                 onClick={addNewBox}
-                className="flex items-center space-x-1 text-xs font-semibold px-2 py-1 rounded bg-purple-950/40 text-purple-300 border border-purple-800/30 hover:bg-purple-900/40 transition-colors"
+                className="flex items-center space-x-1 text-xs font-semibold px-2 py-1 rounded bg-[#16161a] text-[#9a9aa8] border border-[#222228] hover:border-[#34343c] hover:text-[#f4f4f7] transition-colors"
               >
                 <Plus className="h-3 w-3" />
                 <span>Add Box</span>
@@ -261,8 +261,8 @@ export function Playground() {
                     onClick={() => setActiveBoxId(b.id)}
                     className={`px-3 py-1.5 text-xs font-medium rounded-md border transition-all ${
                       b.id === activeBoxId
-                        ? 'bg-purple-600 text-white border-purple-500'
-                        : 'bg-[#16171d] text-[#a0a0ba] border-[#22222a] hover:border-[#333340]'
+                        ? 'bg-[#e8ecef] text-[#0a0a0c] border-[#e8ecef] font-semibold'
+                        : 'bg-[#16171d] text-[#9a9aa8] border-[#222228] hover:border-[#34343c]'
                     }`}
                   >
                     {b.name}
@@ -287,7 +287,7 @@ export function Playground() {
               <h2 className="text-md font-bold text-white uppercase tracking-wider">
                 {activeBox.name} Settings
               </h2>
-              <span className="text-[10px] bg-[#1d1d26] px-2 py-0.5 rounded text-purple-300 uppercase tracking-widest">
+              <span className="text-[10px] bg-[#16161a] px-2 py-0.5 rounded border border-[#222228] text-[#5c5c6a] uppercase tracking-widest">
                 Talwinder Whitelist
               </span>
             </div>
@@ -299,7 +299,7 @@ export function Playground() {
                 type="text"
                 value={activeBox.textContent}
                 onChange={(e) => updateActiveBox('textContent', e.target.value)}
-                className="w-full bg-[#16171d] border border-[#22222a] rounded px-3 py-1.5 text-sm text-white focus:outline-none focus:border-purple-500"
+                className="w-full bg-[#16171d] border border-[#222228] rounded px-3 py-1.5 text-sm text-white focus:outline-none focus:border-[#9a9aa8]"
               />
             </div>
 
@@ -310,7 +310,7 @@ export function Playground() {
                 <select
                   value={activeBox.bgColorKey}
                   onChange={(e) => updateActiveBox('bgColorKey', e.target.value)}
-                  className="w-full bg-[#16171d] border border-[#22222a] rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-purple-500 capitalize"
+                  className="w-full bg-[#16171d] border border-[#222228] rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-[#9a9aa8] capitalize"
                 >
                   {COLORS.map((c) => (
                     <option key={c} value={c}>{c}</option>
@@ -322,7 +322,7 @@ export function Playground() {
                 <select
                   value={activeBox.bgShade}
                   onChange={(e) => updateActiveBox('bgShade', e.target.value)}
-                  className="w-full bg-[#16171d] border border-[#22222a] rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-purple-500"
+                  className="w-full bg-[#16171d] border border-[#222228] rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-[#9a9aa8]"
                 >
                   {SHADES.map((s) => (
                     <option key={s} value={s}>{s}</option>
@@ -338,7 +338,7 @@ export function Playground() {
                 <select
                   value={activeBox.textColorKey}
                   onChange={(e) => updateActiveBox('textColorKey', e.target.value)}
-                  className="w-full bg-[#16171d] border border-[#22222a] rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-purple-500 capitalize"
+                  className="w-full bg-[#16171d] border border-[#222228] rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-[#9a9aa8] capitalize"
                 >
                   {COLORS.map((c) => (
                     <option key={c} value={c}>{c}</option>
@@ -350,7 +350,7 @@ export function Playground() {
                 <select
                   value={activeBox.textShade}
                   onChange={(e) => updateActiveBox('textShade', e.target.value)}
-                  className="w-full bg-[#16171d] border border-[#22222a] rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-purple-500"
+                  className="w-full bg-[#16171d] border border-[#222228] rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-[#9a9aa8]"
                 >
                   {SHADES.map((s) => (
                     <option key={s} value={s}>{s}</option>
@@ -366,7 +366,7 @@ export function Playground() {
                 <select
                   value={activeBox.fontSize}
                   onChange={(e) => updateActiveBox('fontSize', e.target.value)}
-                  className="w-full bg-[#16171d] border border-[#22222a] rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-purple-500"
+                  className="w-full bg-[#16171d] border border-[#222228] rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-[#9a9aa8]"
                 >
                   {/* Filter a nice subset of spacing keys for fonts */}
                   {['0.5', '1', '1.5', '2', '2.5', '3', '3.5', '4', '5', '6', '7', '8', '9', '10', '12', '16', '20', '24'].map((s) => (
@@ -379,7 +379,7 @@ export function Playground() {
                 <select
                   value={activeBox.display}
                   onChange={(e) => updateActiveBox('display', e.target.value)}
-                  className="w-full bg-[#16171d] border border-[#22222a] rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-purple-500"
+                  className="w-full bg-[#16171d] border border-[#222228] rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-[#9a9aa8]"
                 >
                   {DISPLAYS.map((d) => (
                     <option key={d} value={d}>{d}</option>
@@ -401,7 +401,7 @@ export function Playground() {
                   <select
                     value={activeBox.flexDirection}
                     onChange={(e) => updateActiveBox('flexDirection', e.target.value)}
-                    className="w-full bg-[#16171d] border border-[#22222a] rounded px-2.5 py-1.5 text-[11px] text-white focus:outline-none focus:border-purple-500"
+                    className="w-full bg-[#16171d] border border-[#222228] rounded px-2.5 py-1.5 text-[11px] text-white focus:outline-none focus:border-[#9a9aa8]"
                   >
                     {FLEX_DIRECTIONS.map((f) => (
                       <option key={f} value={f}>{f}</option>
@@ -413,7 +413,7 @@ export function Playground() {
                   <select
                     value={activeBox.justifyContent}
                     onChange={(e) => updateActiveBox('justifyContent', e.target.value)}
-                    className="w-full bg-[#16171d] border border-[#22222a] rounded px-2.5 py-1.5 text-[11px] text-white focus:outline-none focus:border-purple-500"
+                    className="w-full bg-[#16171d] border border-[#222228] rounded px-2.5 py-1.5 text-[11px] text-white focus:outline-none focus:border-[#9a9aa8]"
                   >
                     {JUSTIFIES.map((j) => (
                       <option key={j} value={j}>{j}</option>
@@ -430,7 +430,7 @@ export function Playground() {
                 <select
                   value={activeBox.paddingSide}
                   onChange={(e) => updateActiveBox('paddingSide', e.target.value)}
-                  className="w-full bg-[#16171d] border border-[#22222a] rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-purple-500"
+                  className="w-full bg-[#16171d] border border-[#222228] rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-[#9a9aa8]"
                 >
                   <option value="p">p (all sides)</option>
                   <option value="px">px (left/right)</option>
@@ -446,7 +446,7 @@ export function Playground() {
                 <select
                   value={activeBox.paddingKey}
                   onChange={(e) => updateActiveBox('paddingKey', e.target.value)}
-                  className="w-full bg-[#16171d] border border-[#22222a] rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-purple-500"
+                  className="w-full bg-[#16171d] border border-[#222228] rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-[#9a9aa8]"
                 >
                   {SPACING_KEYS.map((k) => (
                     <option key={k} value={k}>{k}</option>
@@ -462,7 +462,7 @@ export function Playground() {
                 <select
                   value={activeBox.marginSide}
                   onChange={(e) => updateActiveBox('marginSide', e.target.value)}
-                  className="w-full bg-[#16171d] border border-[#22222a] rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-purple-500"
+                  className="w-full bg-[#16171d] border border-[#222228] rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-[#9a9aa8]"
                 >
                   <option value="m">m (all sides)</option>
                   <option value="mx">mx (left/right)</option>
@@ -478,7 +478,7 @@ export function Playground() {
                 <select
                   value={activeBox.marginKey}
                   onChange={(e) => updateActiveBox('marginKey', e.target.value)}
-                  className="w-full bg-[#16171d] border border-[#22222a] rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-purple-500"
+                  className="w-full bg-[#16171d] border border-[#222228] rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-[#9a9aa8]"
                 >
                   {SPACING_KEYS.map((k) => (
                     <option key={k} value={k}>{k}</option>
@@ -489,7 +489,7 @@ export function Playground() {
 
             {/* Border Setup */}
             <div className="space-y-3.5 border-t border-[#22222a] pt-4 mt-2">
-              <span className="text-[11px] font-bold text-purple-400 uppercase tracking-widest block">Border Config</span>
+              <span className="text-[11px] font-bold text-[#9a9aa8] uppercase tracking-widest block">Border Config</span>
               
               <div className="grid grid-cols-2 gap-3">
                 <div className="space-y-1.5">
@@ -497,7 +497,7 @@ export function Playground() {
                   <select
                     value={activeBox.borderWidth}
                     onChange={(e) => updateActiveBox('borderWidth', e.target.value)}
-                    className="w-full bg-[#16171d] border border-[#22222a] rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-purple-500"
+                    className="w-full bg-[#16171d] border border-[#222228] rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-[#9a9aa8]"
                   >
                     {SPACING_KEYS.map((k) => (
                       <option key={k} value={k}>{k}</option>
@@ -509,7 +509,7 @@ export function Playground() {
                   <select
                     value={activeBox.borderStyle}
                     onChange={(e) => updateActiveBox('borderStyle', e.target.value)}
-                    className="w-full bg-[#16171d] border border-[#22222a] rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-purple-500"
+                    className="w-full bg-[#16171d] border border-[#222228] rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-[#9a9aa8]"
                   >
                     {BORDER_STYLES.map((s) => (
                       <option key={s} value={s}>{s}</option>
@@ -524,7 +524,7 @@ export function Playground() {
                   <select
                     value={activeBox.borderColorKey}
                     onChange={(e) => updateActiveBox('borderColorKey', e.target.value)}
-                    className="w-full bg-[#16171d] border border-[#22222a] rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-purple-500 capitalize"
+                    className="w-full bg-[#16171d] border border-[#222228] rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-[#9a9aa8] capitalize"
                   >
                     {COLORS.map((c) => (
                       <option key={c} value={c}>{c}</option>
@@ -536,7 +536,7 @@ export function Playground() {
                   <select
                     value={activeBox.borderColorShade}
                     onChange={(e) => updateActiveBox('borderColorShade', e.target.value)}
-                    className="w-full bg-[#16171d] border border-[#22222a] rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-purple-500"
+                    className="w-full bg-[#16171d] border border-[#222228] rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-[#9a9aa8]"
                   >
                     {SHADES.map((s) => (
                       <option key={s} value={s}>{s}</option>
@@ -552,8 +552,8 @@ export function Playground() {
         {/* Right Side: Previews */}
         <div className="lg:col-span-8 order-1 lg:order-2 space-y-6">
           <div className="glass-card p-6 flex flex-col items-center justify-between min-h-[500px] relative">
-            <div className="absolute top-4 left-4 flex items-center space-x-1 bg-black/40 px-2 py-1 rounded text-xs text-[#a0a0ba] border border-white/5 font-semibold uppercase tracking-wider">
-              <LayoutGrid className="h-3.5 w-3.5 text-purple-400" />
+            <div className="absolute top-4 left-4 flex items-center space-x-1 bg-black/40 px-2 py-1 rounded text-xs text-[#9a9aa8] border border-white/5 font-semibold uppercase tracking-wider">
+              <LayoutGrid className="h-3.5 w-3.5 text-[#9a9aa8]" />
               <span>Workspace Previews</span>
             </div>
             
@@ -577,7 +577,7 @@ export function Playground() {
                           {box.name} {box.id === activeBoxId && '(Editing)'}
                         </span>
                         {box.id === activeBoxId && (
-                          <span className="h-2 w-2 rounded-full bg-purple-500 animate-ping" />
+                          <span className="h-2 w-2 rounded-full bg-[#ff6a3d] animate-ping" />
                         )}
                       </div>
 
@@ -598,7 +598,7 @@ export function Playground() {
                           <span className="block text-[10px] text-[#62627a] uppercase font-bold tracking-wider mb-1">
                             Applied Classes
                           </span>
-                          <code className="text-xs text-purple-400 break-all select-all font-mono font-medium block">
+                          <code className="text-xs text-[#9a9aa8] break-all select-all font-mono font-medium block">
                             {appliedClasses}
                           </code>
                         </div>
@@ -623,7 +623,7 @@ export function Playground() {
             <div className="w-full border-t border-[#22222a] pt-4 mt-6 text-left text-xs text-[#62627a]">
               <span className="font-bold text-white block mb-1">💡 Pro Tip on Border Shorthand resets:</span>
               <p>
-                In the Talwinder engine, the border width class sets the shorthand <code className="text-pink-400">border</code> property, resetting style and color to initial values. The generated preview strictly places <code className="text-purple-400">border-width</code> class first, followed by <code className="text-purple-400">border-style</code> and <code className="text-purple-400">border-color</code>, ensuring they combine successfully.
+                In the Talwinder engine, the border width class sets the shorthand <code className="text-[#9a9aa8] font-mono">border</code> property, resetting style and color to initial values. The generated preview strictly places <code className="text-[#9a9aa8] font-mono">border-width</code> class first, followed by <code className="text-[#9a9aa8] font-mono">border-style</code> and <code className="text-[#9a9aa8] font-mono">border-color</code>, ensuring they combine successfully.
               </p>
             </div>
           </div>

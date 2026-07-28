@@ -4,15 +4,16 @@
 :root {
   --bg-dark: #0a0a0c;
   --bg-card: #121216;
-  --bg-card-hover: #181820;
+  --bg-card-hover: #16161a;
   --text-primary: #f4f4f7;
-  --text-secondary: #a0a0ba;
-  --text-muted: #62627a;
-  --border-color: #22222a;
-  --border-color-hover: #333340;
-  --accent-purple: #aa3bff;
-  --accent-purple-glow: rgba(170, 59, 255, 0.15);
-  
+  --text-secondary: #9a9aa8;
+  --text-muted: #5c5c6a;
+  --border-color: #222228;
+  --border-color-hover: #34343c;
+  --accent: #e8ecef;
+  --accent-signal: #ff6a3d;
+  --grid-line: rgba(255, 255, 255, 0.04);
+
   --sans: 'Outfit', system-ui, -apple-system, sans-serif;
   --mono: 'JetBrains Mono', monospace;
 
@@ -20,7 +21,7 @@
   color-scheme: dark;
   background-color: var(--bg-dark);
   color: var(--text-primary);
-  
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -45,16 +46,16 @@ body {
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-purple);
+  background: var(--border-color-hover);
 }
 
-/* Glassmorphism effects */
+/* Solid nav — no blur-glam, just a clean separator */
 .glass-nav {
-  background: rgba(10, 10, 12, 0.75);
-  backdrop-filter: blur(12px);
+  background: var(--bg-dark);
   border-bottom: 1px solid var(--border-color);
 }
 
+/* Plain bordered card — no glow, no backdrop */
 .glass-card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -66,6 +67,25 @@ body {
   background: var(--bg-card-hover);
   border-color: var(--border-color-hover);
   box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.7);
+}
+
+/* Blueprint grid background — applied sparingly (hero only) */
+.blueprint-grid {
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Neutral inline code chip — replaces pink/purple tint everywhere */
+.code-chip {
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  font-family: var(--mono);
+  font-size: 0.75em;
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
 }
 
 /* Styling monospace elements */
